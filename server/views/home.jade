@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1 Attendance Tracker
+  p.lead Automated attendance tracking via&nbsp;
+    a(href="http://opencv.org/", target="_blank") OpenCV
+    |  and&nbsp;
+    a(href="https://tessel.io/", target="_blank") Tessel
+  hr
+
+  for stuGroup in students
+    .row
+      for stu in stuGroup
+        .col-sm-4.center
+          h2 #{stu.andrew_id}
+          img(src='#{stu.getProfilePhotoPath()}', height=90)
+          p Attended: #{stu.attended ? 'Yes' : 'No'}

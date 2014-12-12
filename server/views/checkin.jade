@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .page-header
+    h3 Checkin A Student
+
+  form.form-horizontal(id='checkin-form', method='POST', enctype='multipart/form-data')
+    .form-group
+      label.col-sm-3.control-label(for='photos') Photo
+      .col-sm-7
+        input.form-control(type='file', name='photo', id='photo', multiple='multiple')
+
+    .form-group
+      .col-sm-offset-3.col-sm-7
+        button.btn.btn-success(type='submit')
+          span.ion-person-add
+          | Submit

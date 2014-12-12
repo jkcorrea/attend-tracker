@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  .page-header
+    h3 Ingest Training Data
+
+  form.form-horizontal(id='training-form', method='POST', enctype='multipart/form-data')
+    .form-group
+      label.col-sm-3.control-label(for='andrew_id') Andrew ID
+      .col-sm-7
+        input.form-control(type='text', name='andrew_id', id='andrew_id')
+        //- select.form-control(name='andrew_id', id='andrew_id')
+        //-   for id in andrew_ids
+        //-     option.form-control #{id}
+
+    .form-group
+      label.col-sm-3.control-label(for='photos') Photos
+      .col-sm-7
+        input.form-control(type='file', name='photo', id='photo', multiple='multiple')
+
+    .form-group
+      label.col-sm-3.control-label(for='reset-model') Reset Model?
+      .col-sm-1
+        input(type='checkbox', name='reset_model', id='reset_model')
+
+    .form-group
+      .col-sm-offset-3.col-sm-7
+        button.btn.btn-success(type='submit')
+          span.ion-person-add
+          | Submit
